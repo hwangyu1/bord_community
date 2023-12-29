@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block css %}
+<link rel="stylesheet" href="css/hwan.css">
+{% endblock %}
+{% block content %}
+        <main>
+            <aside>
+                <div class="board_wrap">
+                    <div class="board_title">
+                        <strong>유저 게시판</strong>
+                        <p>유저들과 소통하고 교류하는 게시판입니다</p>
+                    </div>
+                    
+                    <div class="board_write_wrap">
+                        <div class="board_write">
+                            <form action="/review_edit" method="post">
+                                <input type="hidden" name="review_id" value="{{ review.review_id }}">
+                                <div class="title">
+                                    <input type="text" name="review_title" placeholder="제목 입력" value="{{ review.review_title }}" required style="border: none; outline: none; background: none;">
+                                </div>
+                                <hr>
+                                <div class="cont">
+                                    <textarea name="review_content" placeholder="내용 입력" required>{{ review.review_content }}</textarea>
+                                </div>
+                                <div class="bt_wrap">
+                                    <button type="submit">수정</button>
+                                    <a href="/review">취소</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+{% endblock %}

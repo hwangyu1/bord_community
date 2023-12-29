@@ -1,0 +1,140 @@
+{% extends 'layout.html' %}
+{% block content %}
+<section id="banner">
+    <div class="slide_wrap">
+        <div class="slider_img">
+            <div><img src="img/image1.jpg" alt=""></div>
+            <div><img src="img/image2.jpg" alt=""></div>
+            <div><img src="img/image3.jpg" alt=""></div>
+            <div><img src="img/image4.jpg" alt=""></div>
+            <div><img src="img/image5.jpg" alt=""></div>
+            <div><img src="img/image6.jpg" alt=""></div>
+            <div><img src="img/image7.jpg" alt=""></div>
+        </div>
+        <div class="slider_btn">
+            <a href="#" class="prev">&lt;</a>
+            <a href="#" class="next">&gt;</a>
+        </div>
+        <div class="slider_dot">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+    </div>
+</section>
+<script>
+var slideImg = $(".slider_img");
+var slides = slideImg.find(">div");
+var slideBtn = $(".slider_btn");
+var slideDot = $(".slider_dot");
+var slideCount = slides.length;
+var currentIndex = 0;
+function gotoSlide(index) {
+slideImg.animate({ left: -100 * index+'%' },300);
+currentIndex = index;
+
+slideDot.find("a").removeClass("active").eq(currentIndex).addClass("active");
+}
+
+slideBtn.on("click","a",function(e){
+e.preventDefault();
+
+var nextIndex = (currentIndex + 1) % slideCount;
+var prevIndex = (currentIndex - 1) % slideCount;
+if (currentIndex == 0) prevIndex = slideCount -1;
+
+if( $(this).hasClass("prev") ){
+    //왼쪽 버튼을 클릭했을때 
+    gotoSlide(prevIndex);
+} else {
+    //오른쪽 버튼을 클릭했을 때
+    gotoSlide(nextIndex);
+}
+});
+
+slideDot.on("click","a",function(e){
+e.preventDefault();
+if( !$(this).hasClass('active') ){
+    gotoSlide( $(this).index());
+};
+});
+
+//타이머 설정하기
+function startTimer(){
+timer = setInterval(function(){
+    var nextIndex = (currentIndex + 1) % slideCount;
+    gotoSlide(nextIndex);
+},3000);
+};
+startTimer ();
+
+//마우스 오버하면 타이머 멈추기
+function stopTimer(){
+clearInterval(timer);
+}
+slideImg.on({
+mouseenter:stopTimer, 
+mouseleave:startTimer
+});
+
+
+
+//첫 번째 이미지 슬라이드 활성화
+gotoSlide(currentIndex);
+</script>
+
+<div class="snipe wrap_inner">
+    <p class="main_title">샷권
+        <strong> 
+        <font color="red">PICK</font>
+        </strong>
+
+    </p>
+    <div class="snipe_box">
+        <div class="snipe_img"><a href="https://brand.naver.com/koreaboardgames/search?q=%ED%82%A4%ED%8F%AC%EC%A7%80"  onfocus=this.blur()><img src="https://cdnfile.divedice.com/_data/banner/4882c1fe5da7c5cf54ecdb6ab78d39b4.jpg" border=0 ></a></div>
+        <p>키포지: 어둠의 물결</p><!--<span class="snipe_percent">~18%</span>-->
+        <ul class="">
+            <li>붐포지 키는 온다!<br> 매일 똑같은 덱과 메타에 질린 카드게이머라면 강력 추천!</li>
+        </ul>
+    </div>
+    <div class="snipe_box center">
+        <div class="snipe_img"><a href="https://brand.naver.com/koreaboardgames/search?q=%ED%8B%B0%EC%BC%93"  onfocus=this.blur()><img src="https://cdnfile.divedice.com/_data/banner/76b02d6c38ee5223dd4885225341bd3a.png" border=0 ></a></div>
+        <p>티켓 투 라이드</p><!--<span class="snipe_percent">~30%</span>-->
+        <ul class="">
+            <li>북미를 가로지르는 기차 여행!<br>나만의 기차 여행 노선을 만들며 여행을 떠나봐요</li>
+        </ul>
+    </div>
+    <div class="snipe_box">
+        <div class="snipe_img"><a href="https://brand.naver.com/koreaboardgames/search?q=%EA%B4%91%EA%B8%B0%EC%9D%98%20%EC%A0%80%ED%83%9D"  onfocus=this.blur()><img src="https://cdnfile.divedice.com/_data/banner/b21ce51909168a8c51e184a9d2985eb0.jpg" border=0 ></a></div>
+        <p>광기의 저택</p>
+        <ul class="">
+            <li>아컴 파일즈 게임 입문 희망자라면 반드시 해보는 걸 추천하는 걸출한 명작</li>
+        </ul>
+    </div>
+    <div class="snipe_box">
+        <div class="snipe_img"><a href="https://brand.naver.com/koreaboardgames/search?q=%EC%9C%99%EC%8A%A4%ED%8C%AC"  onfocus=this.blur()><img src="https://cdnfile.divedice.com/_data/banner/50dfbf84c089499f31ea34f7cdcdb907.jpg" border=0 ></a></div>
+        <p>윙스팬</p>
+        <ul class="">
+            <li>오밀조밀, 귀여운 엔진 빌딩을 즐기고 싶을 때는<br>윙스팬이 정답!</li>
+        </ul>
+    </div>
+    <div class="snipe_box center">
+        <div class="snipe_img"><a href="https://brand.naver.com/koreaboardgames/search?q=%ED%99%A9%EA%B8%88%EC%9D%98%20%EB%95%85"  onfocus=this.blur()><img src="https://cdnfile.divedice.com/_data/banner/72a7d541716468f3ab08228546d59c6d.jpg" border=0 ></a></div>
+        <p>황금의 땅 엘도라도</p>
+        <ul class="">
+            <li>누구와 즐겨도 부담없이 즐거운 덱 빌딩 레이스!</li>
+        </ul>
+    </div>
+    <div class="snipe_box">
+        <div class="snipe_img"><a href="https://brand.naver.com/koreaboardgames/search?q=%EC%9B%90%EB%8D%94%EC%8A%A4%20%EA%B1%B4%EC%B6%95%EA%B0%80%EB%93%A4"  onfocus=this.blur()><img src="https://cdnfile.divedice.com/_data/banner/54c81e4b1870a96f613b6ce2d5b02f9f.png" border=0 ></a></div>
+        <p>7원더스 건축가들</p>
+        <ul class="">
+            <li>캐쥬얼하게 즐기는 문명 게임! 선택과 집중의 묘미를 살린 명작</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="top">
+                <div>
+                    
+                {% if is_logined %}
+                     {{ nickname }}님 환영합니다
+                     <a id="logout" href="/auth/logout" class="btn">로그아웃</a>
+                    <a href="">마이페이지</a>
+                    <a href="/shopbag">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    장바구니
+                    </a>
+                    
+                {% else %}
+                <a href="/auth/login">로그인</a>
+                <a href="/auth/register">회원가입</a>
+                <a href="">마이페이지</a>
+                <a href="/shopbag">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    장바구니
+                </a>
+                {% endif %}
+                    </a>
+                </div>
+            </div>
+            <div class="logo">
+                <div>
+                    <a href="/">
+                        <img src="1.gif" alt="헤더로고">
+                    </a>
+                
+                </div>
+            </div>
+            <div class="menu">
+                <div>
+                    <ul>
+                        <li><a href="#">게임정보</a></li>
+                        <li><a href="/review">유저 게시판</a></li>
+                        <li><a href="/shop">쇼핑</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </header>
+        {% block content %}
+
+        {% endblock %}
+        <div class="moveTopBtn">
+            맨 위로
+        </div>
+        <script>
+        const $topBtn = document.querySelector(".moveTopBtn");
+        $topBtn.onclick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });  
+        }
+        </script>
+</body>
+        <footer>
+            <div>
+                <p><img src="2.png" alt="푸터로고"></p>
+                <p>
+                    <strong>KIT 경남정보대 2조 캡스톤디자인</strong>
+                    <br>
+                    조원: 김도형, 김환규, 김민서, 권용우, 서재우
+                    <br>
+                    Tel : 010-123-4567 | Mail : kit@gmail.com
+                </p>
+            </div>
+        </footer>
+    </div>
+</html>
