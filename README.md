@@ -88,13 +88,13 @@
 ---
 
 4. 자유게시판
-   ![게시판메인](https://github.com/hwangyu1/board_community/assets/131221635/c798a995-19d2-48fd-accd-dd1dc4499ce1)
+   ![게시판 메인](https://github.com/hwangyu1/bord_community/assets/131221635/c59d9efb-40b1-41ed-adae-1e4d4a07266a)
    -게시판 메인
    
-   ![게시판등록](https://github.com/hwangyu1/board_community/assets/131221635/72adf1b3-66b0-425d-a5a6-11bd73c61cb7)
+   ![게시글 등록](https://github.com/hwangyu1/bord_community/assets/131221635/1994e85a-0d8f-48fc-867a-41430c1427dc)
    -게시판 등록
 
-   ![게시판보기](https://github.com/hwangyu1/board_community/assets/131221635/04eedef5-aae1-4fbb-a919-9298264dd873)
+   ![게시글 보기](https://github.com/hwangyu1/bord_community/assets/131221635/ff3b86d8-6a19-4ace-b110-844614b88cbf)
    -게시판 보기
 
    ![게시판 수정 및 삭제](https://github.com/hwangyu1/board_community/assets/131221635/c978b3cc-f5ba-42f5-9929-7951b1146815)
