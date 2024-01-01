@@ -77,7 +77,7 @@
 ---
 
 3. 로그인, 회원가입
-   ![로그인asdad](https://github.com/hwangyu1/board_community/assets/131221635/4b8da90e-dfeb-4224-bf86-da0d8a036094)
+   ![회원가입](https://github.com/hwangyu1/bord_community/assets/131221635/a76613a3-0a77-493d-b297-c35d2b520a3b)
 
 - 기능<br>
    - 회원가입창 및 로그인 / 디비체크를 통한 Id중복 확인이 가능하게 만듬<br>
