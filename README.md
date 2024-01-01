@@ -65,7 +65,8 @@
 ---
 
 2. 메인 화면
-   ![메인asd](https://github.com/hwangyu1/board_community/assets/131221635/cbfe8811-c6f8-4a44-a803-2c332ff6eaa6)
+  ![메인](https://github.com/hwangyu1/bord_community/assets/131221635/75da427c-b6c0-40ed-b935-d16191bb2386)
+
    
 - 기능<br>
    - 헤더에 회원가입, 로그인, 게임정보, 유저게시판, 쇼핑 버튼이 있음 
